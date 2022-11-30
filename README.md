@@ -25,7 +25,7 @@ Linter 更是會發出許多警示；更別談完成 Build 作業後的程式，
 目前正逐漸蔚為風潮的 Poetry ，有人認為正是為解決上述問題的【解決方案】。
 事實是否真是如此？我的 Python 專案，能否導入引用？！
 
-本專案之啟動，便是用於驗證：【我的 Python 專案，能否採用 Poetry 作為：
+本專案之啟動，便是用於驗證：我的 Python 專案，能否採用 Poetry 作為...
 
 （1）Python 套件管理器：取代原用之 pipenv / Pipfile / requirements.txt；
 
