@@ -15,21 +15,22 @@ psycopg2 = "^2.9.5"
 pylint = "^2.15.7"
 
 [tool.pyright]
+pythonPlatform = "Darwin"
+pythonVersion = "3.10"
+venv = "my-tshu-im"
+venvPath = "/Users/alanjui/.pyenv/versions"
+
 # include = ["src"]
-exclude = ["**/node_modules",
+exclude = [
+    "**/node_modules",
     "**/__pycache__",
     "src/experimental",
     "src/typestubs"
 ]
 defineConstant = { DEBUG = true }
-venvPath = "/Users/alanjui/.pyenv/versions"
-venv = "my-tshu-im"
 
 reportMissingImports = true
 reportMissingTypeStubs = false
-
-pythonVersion = "3.10"
-pythonPlatform = "Darwin"
 
 # executionEnvironments = [
 #   { root = "src/web", pythonVersion = "3.5", pythonPlatform = "Windows", extraPaths = [ "src/service_libs" ] },
@@ -42,7 +43,7 @@ pythonPlatform = "Darwin"
 
 [virtualenvs]
 in-project = false
-path = "/Users/alanjui/.pyenv/versions/my-tshu-im/"
+# path = "/Users/alanjui/.pyenv/versions/my-tshu-im/"
 
 [build-system]
 requires = ["poetry-core"]
@@ -74,6 +75,7 @@ unsafe-load-any-extension = "yes"
 [tool.pylint."MESSAGES CONTROL"]
 enable = "c-extension-no-member"
 disable = [
+  "bare-except",
   "no-member",
   "unused-variable",
   "broad-except",
@@ -83,20 +85,20 @@ disable = [
   "missing-docstring"
 ]
 
-# [tool.pylint.BASIC]
-# # It is OK to have 2-letters identifiers, e.g. 'id' or 'ok'. Also allow
-# # long identifiers, cause there is a strong line length limitation which
-# # will force engineers to thing twice before giving too long names.
-# argument-rgx = "[a-z_][a-z0-9_]{1,64}$"
-# attr-rgx = "[a-z_][a-z0-9_]{1,64}$"
-# bad-names = "foo,bar,baz,toto,tutu,tata,responce,pathes"
-# class-attribute-rgx = "([A-Za-z_][A-Za-z0-9_]{1,64}|(__.*__))$"
-# function-rgx = "[a-z_][a-z0-9_]{1,64}$"
-# good-names = "i,j,k,ex,Run,_"
-# method-rgx = "[a-z_][a-z0-9_]{1,64}$"
-# # Docstrings are needed everywhere.
-# no-docstring-rgx = "^$"
-# variable-rgx = "[a-z_][a-z0-9_]{1,64}$"
+[tool.pylint.BASIC]
+# It is OK to have 2-letters identifiers, e.g. 'id' or 'ok'. Also allow
+# long identifiers, cause there is a strong line length limitation which
+# will force engineers to thing twice before giving too long names.
+argument-rgx = "[a-z_][a-z0-9_]{1,64}$"
+attr-rgx = "[a-z_][a-z0-9_]{1,64}$"
+bad-names = "foo,bar,baz,toto,tutu,tata,responce,pathes"
+class-attribute-rgx = "([A-Za-z_][A-Za-z0-9_]{1,64}|(__.*__))$"
+function-rgx = "[a-z_][a-z0-9_]{1,64}$"
+good-names = "i,j,k,ex,Run,_"
+method-rgx = "[a-z_][a-z0-9_]{1,64}$"
+# Docstrings are needed everywhere.
+no-docstring-rgx = "^$"
+variable-rgx = "[a-z_][a-z0-9_]{1,64}$"
 
 [tool.pylint.FORMAT]
 max-line-length="88"
